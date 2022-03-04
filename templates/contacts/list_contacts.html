@@ -42,11 +42,19 @@
       <div>{{ contact.birthday }}</div>
     </div>
     {% endif %}
+
+    {% if contact.note.note %}
+    <div class="flex">
+      <div class="pr2"><i class="icofont-ui-note"></i></div>
+      <div>{{ contact.note.note }}</div>
+    </div>
+    {% endif %}
     <p>
       <a href="{% url 'edit_contact' pk=contact.pk %}">Edit Contact</a><br>    
       <a class="red" href="{% url 'delete_contact' pk=contact.pk %}">Delete Contact</a>
     </p>
     </div>
+
   {% endfor %}
 </div>  
 {% endblock %}
